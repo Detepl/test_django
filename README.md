@@ -1,1 +1,1 @@
-# test_jango
+# test_django
