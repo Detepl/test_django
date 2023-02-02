@@ -4,8 +4,8 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse("<h1>it_works???</h1>")
+    return render(request, "main/index.html")
 
 
 def test(request):
-    return HttpResponse("<h1>it_really_works</h1>")
+    return render(request, "main/test.html")
