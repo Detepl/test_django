@@ -1,12 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Main page</title>
-</head>
-<body>
-    <h1>It works?</h1>
-    <p><a href="http://127.0.0.1:8000/test">???</a></p>
+{% extends "main/base.html" %}
 
-</body>
-</html>
+{% block title %}
+Main page
+{% endblock %}
+
+{% block main %}
+    <h1>It works?</h1>
+    <p><a href="{% url 'test' %}">???</a></p>
+    {% if users %}
+        {% for el in users %}
+            <div>
+                <h2>{{ el.name }}</h2>
+                <h3>{{ el.pasw }}</h3>
+            </div>
+        {% endfor %}
+    {% else %}
+        <h4>NO USERS</h4>
+    {% endif %}
+{% endblock %}
+
+

@@ -1,10 +1,11 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from .models import User
 # Create your views here.
 
 
 def index(request):
-    return render(request, "main/index.html")
+    users = User.objects.all()
+    return render(request, "main/index.html",{"users":users})
 
 
 def test(request):
