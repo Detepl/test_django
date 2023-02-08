@@ -1,0 +1,18 @@
+{% extends "main/base.html" %}
+
+{% block title %}
+add_user page
+{% endblock %}
+
+{% block main %}
+    <h1>Add user</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.name }}<br>
+        {{ form.pasw }}<br>
+        <button type="submit">ADD</button>
+        <span>{{error}}</span>
+    </form>
+{% endblock %}
+
+
